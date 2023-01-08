@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+*:focus {
+  outline: 7px solid rgba(255, 255, 255, 0.432);
+}
 html {
   font-size: 62.5%; /*10/16=0.65*100%*/
 }
@@ -35,6 +38,9 @@ body {
 }
 .grid--4--cols {
   grid-template-columns: repeat(4, 1fr);
+}
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
 }
 /*------Header components---------*/
 .heading-primary,
@@ -103,6 +109,22 @@ body {
   background-color: #fdf2e9;
   /* border: 1px solid #e67e22; */
   box-shadow: inset 0 0 0 1px #e67e22;
+}
+.btn-form {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  background-color: #2e1907;
+  color: #fae5d3;
+  align-self: end;
+  height: 5rem;
+  border-radius: 9px;
+  transition: all 0.5s;
+  font-size: 2rem;
+}
+.btn-form:hover {
+  background-color: #fff;
+  color: #555;
 }
 strong {
   font-weight: 600;

@@ -83,6 +83,20 @@ default : 9px
 .main-nav-link.nav-cta:active {
   background-color: #cf711f;
 }
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.icon-mobile-nav {
+  width: 4.8rem;
+  height: 4.8rem;
+  color: #333;
+  display: none;
+}
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
 /************************************************************************/
 /*Hero Section*/
 /************************************************************************/
@@ -90,6 +104,7 @@ default : 9px
   background-color: #fdf2e9;
   padding: 4.6rem 0 9.6rem 0;
 }
+
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;

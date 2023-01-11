@@ -58,18 +58,21 @@ default : 9px
   gap: 3.2rem;
   align-items: center;
 }
+
 .main-nav-link:link,
 .main-nav-link:visited {
   text-decoration: none;
   color: #333;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1.8rem;
   display: inline-block;
   transition: all 0.7s;
+  outline: none;
 }
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #cf711f;
+  outline: none;
 }
 
 .nav-cta:link,
@@ -83,10 +86,25 @@ default : 9px
 .main-nav-link.nav-cta:active {
   background-color: #cf711f;
 }
+/*---Sticky Nav----*/
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.938);
+  z-index: 9999;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+/*---Mobile Nav----*/
 .btn-mobile-nav {
   border: none;
   background: none;
   cursor: pointer;
+  display: none; /*20230110 added*/
 }
 .icon-mobile-nav {
   width: 4.8rem;
@@ -104,7 +122,10 @@ default : 9px
   background-color: #fdf2e9;
   padding: 4.6rem 0 9.6rem 0;
 }
-
+.sticky .section-hero {
+  margin-top: 7.6rem;
+  background-color: #fdf2e9;
+}
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -129,6 +150,9 @@ default : 9px
   justify-content: center;
   align-items: center;
   margin-top: 8rem;
+}
+.delivered-imgs {
+  display: flex;
 }
 .delivered-img img {
   width: 4.8rem;
@@ -176,9 +200,9 @@ default : 9px
 /*How it work Section*/
 /************************************************************************/
 
-/* .section-how {
+.section-how {
   padding: 9.6rem 0;
-} */
+}
 .step-number {
   font-size: 9.8rem;
   font-weight: 600;
@@ -209,19 +233,20 @@ default : 9px
   z-index: -1;
 }
 .step-img-box::before {
-  width: 85%;
-  padding-bottom: 85%;
+  width: 60%;
+  padding-bottom: 60%;
   background-color: #fdf2e9;
   z-index: -1;
 }
 .step-img-box::after {
-  width: 65%;
-  padding-bottom: 65%;
+  width: 45%;
+  padding-bottom: 45%;
   background-color: #fae5d3;
   z-index: -1;
 }
 .step-img {
-  width: 50%;
+  /* width: 50%; */
+  width: 35%; /*20230111 added*/
 }
 /************************************************************************/
 /*Meal Section*/
@@ -244,6 +269,7 @@ default : 9px
 .meal-title {
   font-size: 2.4rem;
   font-weight: 600;
+  margin-bottom: 3.2rem;
 }
 .meal-attributes {
   list-style: none;
@@ -285,9 +311,11 @@ default : 9px
 /************************************************************************/
 .section-testimonial {
   background-color: #fdf2e9;
+  display: grid;
 }
 .testimonial-container {
-  padding: 9.6rem 0;
+  padding: 9.6rem;
+  align-self: center; /*20230111 added*/
 }
 .testimonials {
   display: grid;
@@ -392,9 +420,11 @@ default : 9px
 }
 .priceing-footer {
   text-align: center;
+  margin-bottom: 9.6rem;
 }
 .pricing-footer-text {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
   margin-top: 5.4rem;
   color: #777;
 }
@@ -403,7 +433,7 @@ default : 9px
 /************************************************************************/
 .grid-feature--margin-top {
   padding-top: 9.6rem;
-  padding-bottom: 9.6rem;
+  /* padding-bottom: 9.6rem; */
 }
 .feature-icon {
   color: #e67e22;
@@ -422,20 +452,21 @@ default : 9px
 }
 .feature-text {
   font-size: 1.8rem;
-  line-height: 1.8rem;
+  line-height: 1.8;
 }
 /************************************************************************/
 /*Call to action Section*/
 /************************************************************************/
 .section-cta {
-  padding: 9.6rem 0;
+  /* padding: 9.6rem 0; */
+  padding: 4.8rem 0 12.8rem;
 }
 .cta {
   display: grid;
   grid-template-columns: 2fr 1fr;
   background-color: #e67e22;
   background-image: linear-gradient(to right bottom, #e98b38, #e67e22);
-  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.75);
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.363);
   /*temp height*/
   /* height: 50rem; */
   border-radius: 11px;
@@ -496,8 +527,9 @@ default : 9px
 /*Footer Section*/
 /************************************************************************/
 .footer {
-  border-top: 1px solid #777;
-  padding: 3.6rem 0;
+  border-top: 1px solid #eee;
+  /* padding: 3.6rem 0; */
+  padding: 12.8rem 0;
 }
 .grid-footer {
   grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
@@ -536,6 +568,11 @@ default : 9px
 .social-icon {
   width: 2.4rem;
   height: 2.4rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+.social-icon:hover {
+  color: #333;
 }
 .copyright {
   font-size: 1.4rem;
